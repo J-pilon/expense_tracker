@@ -1,9 +1,9 @@
-let mysql      = require('mysql');
-let connection = mysql.createConnection({
+const mysql      = require('mysql');
+const conn = mysql.createConnection({
   host     : 'localhost',
   user     : 'renaissance',
   password : '1234',
   database : 'expense_tracker'
 });
 
-module.exports = connection;
+module.exports = conn;
