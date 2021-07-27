@@ -1,6 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-Backend/node_modules
+API/node_modules
 Frontend/node_modules
 
-Backend/.env
+API/.env
