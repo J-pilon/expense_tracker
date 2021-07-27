@@ -7,7 +7,7 @@
 const app = require('../app');
 const debug = require('debug')('backend:server');
 const http = require('http');
-const connection = require('../db/mysql_setup');
+const conn = require('../db/mysql_setup');
 
 /**
  * Get port from environment and store in Express.
@@ -91,7 +91,7 @@ function onListening() {
 }
 
 // connects to MySQL server
-connection.connect((err) => {
+conn.connect((err) => {
   if (err) throw err;
   console.log('Connected to MySQL Server!');
 });
