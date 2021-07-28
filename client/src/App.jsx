@@ -20,13 +20,15 @@ function App() {
   
   useEffect(() => {
     console.log("newExpense", newExpense);
-    
-    axios.post("http://localhost:3001/api/expenses", {...newExpense})
-      .then((response) => {
-        console.log(response);
-      }, (error) => {
-        console.log(error);
-      });
+    if (Object.keys(newExpense).length !== 0) {
+      console.log("the object is not empty");
+      axios.post("http://localhost:3001/api/expenses", {...newExpense})
+        .then((response) => {
+          console.log(response);
+        }, (error) => {
+          console.log(error);
+        });
+      }
   }, [newExpense])
 
   return (
