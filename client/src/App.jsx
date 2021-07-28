@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Form from './Form'
 import Expenses from './Expenses';
-import './App.css';
+import './styles/App.css';
 
 function App() {
   const [ newExpense, setNewExpense ] = useState({});

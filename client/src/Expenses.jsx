@@ -1,4 +1,4 @@
-import "./expenses.css";
+import "./styles/expenses.css";
 
 export default function Expenses(props) {
   const { expenses } = props;
@@ -15,7 +15,12 @@ export default function Expenses(props) {
     )
   })
   return (
-    <div classname="expenses-list">
+    <div id="expenses-list">
+      <ul style={{textDecoration: "underline"}}>
+        <li>Name</li>
+        <li>Amount</li>
+        <li>Category</li>
+      </ul>
       {expenseList}
     </div>
   )

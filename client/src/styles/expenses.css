@@ -1,0 +1,13 @@
+#expenses-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: grey;
+}
+
+#expenses-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
