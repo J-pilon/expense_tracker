@@ -40,11 +40,7 @@ Configure MySQL database
 
 Open two terminals. One terminal will be opened with expense_tracker/api and the other with expense_tracker/client.
 
-Use 
-```sh 
-npm start 
-``` 
-to start the node server as well as the react application.
+Use ``` npm start ``` to start the node server and to start the react application.
 
 # DEPENDENCIES
 
