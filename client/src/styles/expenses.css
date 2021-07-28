@@ -5,9 +5,9 @@
   background-color: grey;
 }
 
-#expenses-list ul {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+table, th, td {
+  border: black 2px solid;
+  text-align: center;
+  border-collapse: collapse;
+  padding: 5px;
 }

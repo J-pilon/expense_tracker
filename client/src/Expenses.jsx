@@ -7,21 +7,28 @@ export default function Expenses(props) {
 
   const expenseList = expenses.map((exp, index) => {
     return (
-      <ul key={index}>
-        <li>{exp.title}</li>
-        <li>{exp.cost_cents}</li>
-        <li>{exp.category}</li>
-      </ul>
+      <tr key={index}>
+        <td>{exp.title}</td>
+        <td>{exp.cost_cents}</td>
+        <td>{exp.category}</td>
+      </tr>
     )
   })
   return (
     <div id="expenses-list">
-      <ul style={{textDecoration: "underline"}}>
-        <li>Name</li>
-        <li>Amount</li>
-        <li>Category</li>
-      </ul>
-      {expenseList}
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Category</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {expenseList}
+        </tbody>
+      </table>
     </div>
   )
 }
