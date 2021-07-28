@@ -1,9 +1,13 @@
+import Form from './Form'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <p>Hello Mr. Josiah</p>
+      <header>
+        <h1>Expense Tracker</h1>
+      </header>
+      <Form />
     </div>
   );
 }
