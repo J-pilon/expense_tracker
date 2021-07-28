@@ -8,14 +8,26 @@ function App() {
   const [ newExpense, setNewExpense ] = useState({});
   const [ expenses, setExpenses ] = useState([]);
 
+  
   useEffect(() => {
     axios.get("http://localhost:3001/api/expenses")
-      .then(result => {
-        const data = [...result.data];
-        setExpenses(data);
-      })
-      .catch(err => console.log(err));
+    .then(result => {
+      const data = [...result.data];
+      setExpenses(data);
+    })
+    .catch(err => console.log(err));
   }, [])
+  
+  useEffect(() => {
+    console.log("newExpense", newExpense);
+    
+    axios.post("http://localhost:3001/api/expenses", {...newExpense})
+      .then((response) => {
+        console.log(response);
+      }, (error) => {
+        console.log(error);
+      });
+  }, [newExpense])
 
   return (
     <div className="App">
@@ -23,7 +35,7 @@ function App() {
         <h1>Expense Tracker</h1>
       </header>
       <div className="App-body">
-        <Form />
+        <Form setNewExpense={(val) => setNewExpense(val)}/>
         <Expenses expenses={expenses}/>
       </div>
     </div>
