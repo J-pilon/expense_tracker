@@ -1,4 +1,5 @@
 import Form from './Form'
+import Expenses from './Expenses';
 import './App.css';
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
         <h1>Expense Tracker</h1>
       </header>
       <Form />
+      <Expenses />
     </div>
   );
 }
