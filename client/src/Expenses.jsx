@@ -16,6 +16,11 @@ export default function Expenses(props) {
   })
   return (
     <div id="expenses-list">
+      <ul style={{textDecoration: "underline"}}>
+        <li>Name</li>
+        <li>Amount</li>
+        <li>Category</li>
+      </ul>
       {expenseList}
     </div>
   )
