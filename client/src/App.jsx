@@ -22,8 +22,10 @@ function App() {
       <header>
         <h1>Expense Tracker</h1>
       </header>
-      <Form />
-      <Expenses expenses={expenses}/>
+      <div className="App-body">
+        <Form />
+        <Expenses expenses={expenses}/>
+      </div>
     </div>
   );
 }

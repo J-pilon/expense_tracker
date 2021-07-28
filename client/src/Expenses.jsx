@@ -1,11 +1,13 @@
+import "./expenses.css";
+
 export default function Expenses(props) {
   const { expenses } = props;
 
-  console.log("expenses", expenses);
+  // console.log("expenses", expenses);
 
-  const expenseList = expenses.map(exp => {
+  const expenseList = expenses.map((exp, index) => {
     return (
-      <ul style={{listStyleType: "none"}}>
+      <ul key={index}>
         <li>{exp.title}</li>
         <li>{exp.cost_cents}</li>
         <li>{exp.category}</li>
@@ -13,7 +15,7 @@ export default function Expenses(props) {
     )
   })
   return (
-    <div>
+    <div classname="expenses-list">
       {expenseList}
     </div>
   )
