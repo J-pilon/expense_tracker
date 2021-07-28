@@ -26,4 +26,15 @@ app.get('/api/expenses', (req, res) => {
   })
 })
 
+app.post('/api/expenses', (req, res) => {
+  console.log('params@', req.params);
+
+  // pool.getConnection((err, connection) => {
+  //   if(err) throw err;
+  //   console.log('connected as id ' + connection.threadId);
+  //   let sql = 
+  //   connection.query()
+  // })
+})
+
 module.exports = app;
