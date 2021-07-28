@@ -1,10 +1,11 @@
-.expenses-list {
+#expenses-list {
   display: flex;
   flex-direction: column;
 }
 
-.expenses-list ul {
+#expenses-list ul {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }

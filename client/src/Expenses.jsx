@@ -1,4 +1,4 @@
-import "./expenses.css";
+import "./styles/expenses.css";
 
 export default function Expenses(props) {
   const { expenses } = props;
@@ -15,7 +15,7 @@ export default function Expenses(props) {
     )
   })
   return (
-    <div classname="expenses-list">
+    <div id="expenses-list">
       {expenseList}
     </div>
   )
