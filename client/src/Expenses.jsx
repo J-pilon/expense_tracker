@@ -1,17 +1,20 @@
-import { useEffect } from "react";
-import axios from "axios";
+export default function Expenses(props) {
+  const { expenses } = props;
 
-export default function Expenses() {
-  useEffect(() => {
-    axios("http://localhost:8080/api/expenses")
-      .then(res => console.log(res.data))
-      .catch(err => console.log(err));
+  console.log("expenses", expenses);
+
+  const expenseList = expenses.map(exp => {
+    return (
+      <ul style={{listStyleType: "none"}}>
+        <li>{exp.title}</li>
+        <li>{exp.cost_cents}</li>
+        <li>{exp.category}</li>
+      </ul>
+    )
   })
-
-
   return (
     <div>
-      
+      {expenseList}
     </div>
   )
 }

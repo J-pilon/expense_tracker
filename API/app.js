@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
 
 app.get('/api/expenses', (req, res) => {
   pool.getConnection((err, connection) => {
@@ -21,6 +25,7 @@ app.get('/api/expenses', (req, res) => {
       connection.release();
       if(err) throw err;
 
+      res.send(rows);
       console.log('The data from the expenses table \n', rows)
     })
   })
@@ -38,5 +43,5 @@ app.post('/api/expenses', (req, res) => {
 })
 
 app.listen(3001, () => {
-  console.log('server is listening on port 3000');
+  console.log('server is listening on port 3001');
 })
