@@ -37,4 +37,6 @@ app.post('/api/expenses', (req, res) => {
   // })
 })
 
-module.exports = app;
+app.listen(3001, () => {
+  console.log('server is listening on port 3000');
+})
