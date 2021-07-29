@@ -45,7 +45,7 @@ app.post('/api/expenses', (req, res) => {
   })
 })
 
-app.delete('/api/expenses/delete/:id', (req, res) => {
+app.delete('/api/expenses/:id', (req, res) => {
   const id = req.params.id;
 
   pool.getConnection((err, connection) => {
