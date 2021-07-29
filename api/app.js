@@ -26,7 +26,7 @@ app.get('/api/expenses', (req, res) => {
 
 app.post('/api/expenses', (req, res) => {
   const title = req.body.name;
-  const cost = parseInt(req.body.cost);
+  const cost = parseInt(req.body.cost) * 100;
   const category = req.body.category;
 
   console.log("#", title, cost, category);
