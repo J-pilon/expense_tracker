@@ -45,6 +45,10 @@ app.post('/api/expenses', (req, res) => {
   })
 })
 
+app.delete('/api/expenses/:id', (req, res) => {
+  console.log(req.params.id);
+})
+
 app.listen(3001, () => {
   console.log('server is listening on port 3001');
 })
