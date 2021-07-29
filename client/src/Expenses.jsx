@@ -5,12 +5,17 @@ export default function Expenses(props) {
 
   // console.log("expenses", expenses);
 
+  function clickHandler(index) {
+    console.log("$", index)
+  }
+
   const expenseList = expenses.map((exp, index) => {
     return (
-      <tr key={index}>
+      <tr key={index} id={index}>
         <td>{exp.title}</td>
         <td>{exp.cost_cents}</td>
         <td>{exp.category}</td>
+        <td><button type="button" onClick={() => clickHandler(index)}>Delete</button></td>
       </tr>
     )
   })
