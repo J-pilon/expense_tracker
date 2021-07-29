@@ -5,8 +5,7 @@ export default function Expenses(props) {
 
   // console.log("expenses", expenses);
 
-  function clickHandler(index) {
-    const id = index + 1;
+  function clickHandler(id) {
     setDeleteExpense(id);
   }
 
@@ -16,7 +15,7 @@ export default function Expenses(props) {
         <td>{exp.title}</td>
         <td>{exp.cost_cents}</td>
         <td>{exp.category}</td>
-        <td><button type="button" onClick={() => clickHandler(index)}>Delete</button></td>
+        <td><button type="button" onClick={() => clickHandler(exp.id)}>Delete</button></td>
       </tr>
     )
   })
