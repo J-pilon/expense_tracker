@@ -7,6 +7,7 @@ import './styles/App.css';
 function App() {
   const [ newExpense, setNewExpense ] = useState({});
   const [ expenses, setExpenses ] = useState([]);
+  const [ deleteExpense, setDeleteExpense ] = useState('')
 
   
   useEffect(() => {
@@ -16,7 +17,7 @@ function App() {
       setExpenses(data);
     })
     .catch(err => console.log(err));
-  }, [])
+  }, []);
   
   useEffect(() => {
     console.log("newExpense", newExpense);
@@ -29,7 +30,16 @@ function App() {
           console.log(error);
         });
       }
-  }, [newExpense])
+  }, [newExpense]);
+
+  useEffect(() => {
+    axios.delete(`http://localhost:3001/api/expenses/${deleteExpense}`)
+      .then((response) => {
+        console.log(response);
+      }, (error) => {
+        console.log(error);
+      });
+  }, [deleteExpense])
 
   return (
     <div className="App">
@@ -38,7 +48,7 @@ function App() {
       </header>
       <div className="App-body">
         <Form setNewExpense={(val) => setNewExpense(val)}/>
-        <Expenses expenses={expenses}/>
+        <Expenses expenses={expenses} delete={(val) => setDeleteExpense(val)}/>
       </div>
     </div>
   );
