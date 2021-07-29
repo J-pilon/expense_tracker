@@ -29,8 +29,6 @@ app.post('/api/expenses', (req, res) => {
   const cost = parseInt(req.body.cost) * 100;
   const category = req.body.category;
 
-  console.log("#", title, cost, category);
-
   pool.getConnection((err, connection) => {
     if(err) throw err;
     console.log('connected as id ' + connection.threadId);
