@@ -36,11 +36,29 @@ app.post('/api/expenses', (req, res) => {
     if(err) throw err;
     console.log('connected as id ' + connection.threadId);
 
-    let sql = 'INSERT INTO expenses (title, cost_cents, category) VALUES (?, ?, ?);'
+    const sql = 'INSERT INTO expenses (title, cost_cents, category) VALUES (?, ?, ?);'
     connection.query(sql, [title, cost, category], function (error, results, fields) {
-      if(error) console.log(error);
-      if(results) console.log(results);
-      if(fields) console.log(fields)
+      connection.release();
+      if(error) console.log("error: ", error);
+      if(results) console.log("results: ", results);
+      if(fields) console.log("fields: ", fields);
+    });
+  })
+})
+
+app.delete('/api/expenses/delete/:id', (req, res) => {
+  const id = req.params.id;
+
+  pool.getConnection((err, connection) => {
+    if(err) throw err;
+    console.log('connected as id ' + connection.threadId);
+
+    const sql = 'DELETE FROM expenses WHERE id=?;'
+    connection.query(sql, [id], function (error, results, fields) {
+      connection.release();
+      if(error) console.log("error: ", error);
+      if(results) console.log("results: ", results);
+      if(fields) console.log("fields: ", fields);
     });
   })
 })
