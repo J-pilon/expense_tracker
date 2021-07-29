@@ -1,12 +1,13 @@
 import "./styles/expenses.css";
 
 export default function Expenses(props) {
-  const { expenses } = props;
+  const { expenses, setDeleteExpense } = props;
 
   // console.log("expenses", expenses);
 
   function clickHandler(index) {
-    console.log("$", index)
+    const id = index + 1;
+    setDeleteExpense(id);
   }
 
   const expenseList = expenses.map((exp, index) => {
