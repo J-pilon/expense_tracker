@@ -4,7 +4,8 @@ export default function Form(props) {
   const [ expenseName, setExpenseName ] = useState('');
   const [ cost, setCost ] = useState('');
   const [ category, setCategory ] = useState('');
-  const { setNewExpense } = props;
+
+  const { setNewExpense, addExpense } = props;
 
   function reset() {
     setExpenseName('');
@@ -15,6 +16,7 @@ export default function Form(props) {
   function submitHandler(e) {
     e.preventDefault();
     setNewExpense({name: expenseName, cost: cost, category: category})
+    addExpense();
     reset();
   }
 

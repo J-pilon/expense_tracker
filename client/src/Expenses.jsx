@@ -1,10 +1,10 @@
 import "./styles/expenses.css";
 
 export default function Expenses(props) {
-  const { expenses, setDeleteExpense } = props;
+  const { expenses, deleteExpense } = props;
 
   function clickHandler(id) {
-    setDeleteExpense(id);
+    deleteExpense(id);
   }
 
   function totalOfCosts() {
