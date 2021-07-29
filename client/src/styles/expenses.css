@@ -11,3 +11,7 @@ table, th, td {
   border-collapse: collapse;
   padding: 5px;
 }
+
+.delete-button {
+  background-color: hsl(11deg 73% 48%);
+}
